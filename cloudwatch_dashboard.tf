@@ -12,7 +12,7 @@ resource "aws_cloudwatch_dashboard" "infra_dashboard" {
         properties = {
           title = "Uptime - ALB Healthy Hosts",
           metrics = [
-            [ "AWS/ApplicationELB", "HealthyHostCount", "LoadBalancer", "app/Ibacbr-LB8A1-eBf9GTCPKjBq/b04a514f4135b681", { "stat": "Minimum" } ]
+            [ "AWS/ApplicationELB", "HealthyHostCount", "LoadBalancer", "app/NAME-LB8A1-XXXXXXX/XXXXXXX", { "stat": "Minimum" } ]
           ],
           period = 300,
           stat = "Minimum",
@@ -40,11 +40,11 @@ resource "aws_cloudwatch_dashboard" "infra_dashboard" {
         width = 12,
         height = 6,
         properties = {
-          title = "Auto Scaling Group Utilization (%) - TESTER-IBAC",
+          title = "Auto Scaling Group Utilization (%) - ASG-NAME",
           metrics = [
             [ { "expression": "(m1/m2)*100", "label": "Usage %", "id": "e1", "region": "sa-east-1" } ],
-            [ "AWS/AutoScaling", "GroupInServiceInstances", "AutoScalingGroupName", "TESTER-IBAC", { "id": "m1", "visible": false } ],
-            [ "AWS/AutoScaling", "GroupMaxSize", "AutoScalingGroupName", "TESTER-IBAC", { "id": "m2", "visible": false } ]
+            [ "AWS/AutoScaling", "GroupInServiceInstances", "AutoScalingGroupName", "ASG-NAME", { "id": "m1", "visible": false } ],
+            [ "AWS/AutoScaling", "GroupMaxSize", "AutoScalingGroupName", "ASG-NAME", { "id": "m2", "visible": false } ]
           ],
           region = "sa-east-1",
           view = "timeSeries",
