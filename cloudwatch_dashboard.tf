@@ -75,7 +75,7 @@ resource "aws_cloudwatch_dashboard" "infra_dashboard" {
           title = "Platform Availability (%) - Last 3 Months",
           metrics = [
             [ { "expression": "100 * (m1 / PERIOD(m1))", "label": "Availability %", "id": "e1", "region": "sa-east-1" } ],
-            [ "AWS/ApplicationELB", "HealthyHostCount", "LoadBalancer", "app/Ibacbr-LB8A1-eBf9GTCPKjBq/b04a514f4135b681", { "id": "m1", "stat": "SampleCount", "visible": false } ]
+            [ "AWS/ApplicationELB", "HealthyHostCount", "LoadBalancer", "app/lbbr-LB8A1-eBf9GTCPKjBq/b04a514f4135b681", { "id": "m1", "stat": "SampleCount", "visible": false } ]
           ],
           region = "sa-east-1",
           view = "timeSeries",
